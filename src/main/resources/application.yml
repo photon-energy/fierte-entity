@@ -1,0 +1,92 @@
+server:
+  port: 9001
+
+
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  application:
+    name: FIERTE-WEB
+  ## MULTIPART (MultipartProperties)
+  # Enable multipart uploads
+  servlet:
+    multipart:
+      enabled: true
+      # Threshold after which files are written to disk.
+      file-size-threshold: 2KB
+      # Max file size.
+      max-file-size: 200MB
+      # Max Request Size
+      max-request-size: 215MB
+  security:
+    user:
+      name: Paycom
+      password: G&cigugAH0SxB88BVN?mcFfZDIku&A8CfOrq
+    oauth2:
+      client:
+        registration:
+          # Keycloak
+          keycloak:
+            client-id: fierte-client
+            client-secret: wbOxIpKrp4mUeG9pLp6ddCWBKgKvwGE0
+            auth-server-url: https://keycloak.fierte.uz/auth
+            realm: fierte
+            resource: fierte
+            authorization-grant-type: password
+        provider:
+          keycloak:
+            authorization-uri: https://keycloak.fierte.uz/auth/realms/fierte/protocol/openid-connect/auth
+            user-info-uri: https://keycloak.fierte.uz/auth/realms/fierte/protocol/openid-connect/userinfo
+            token-uri: https://keycloak.fierte.uz/auth/realms/fierte/protocol/openid-connect/token
+            user-name-attribute: preferred_username
+            jwk-set-uri: https://keycloak.fierte.uz/auth/realms/fierte/protocol/openid-connect/certs
+            certs-id: zojPS0ISRmmyK1s7d-2ZJ4S9uBZChnSGwvAV4M8w8f4
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.fierte.uz/auth/realms/fierte
+          jwk-set-uri: https://keycloak.fierte.uz/auth/realms/fierte/protocol/openid-connect/certs
+
+# Keycloak
+keycloak:
+  auth-server-url: https://keycloak.fierte.uz/auth
+  realm: fierte
+  resource: fierte
+  principal-attribute: preferred_username
+
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka
+#      defaultZone: http://localhost:8761/eureka
+
+  instance:
+    hostname: localhost
+
+module-name: app
+api-version: 1.0
+
+
+springdoc:
+  swagger-ui:
+    oauth:
+      clientId: fierte-client
+      clientSecret: wbOxIpKrp4mUeG9pLp6ddCWBKgKvwGE0
+  oAuthFlow:
+    authorizationUrl: https://keycloak.fierte.uz/auth/realms/fierte/protocol/openid-connect/auth
+    tokenUrl: https://keycloak.fierte.uz/auth/realms/fierte/protocol/openid-connect/token
+    use-pkce-with-authorization-code-grant: true
+
+
+# Hibernate props
+hibernate:
+  hbm2ddl:
+    auto: create
+  dialect: org.hibernate.dialect.PostgreSQL10Dialect
+
+
+
+## File Storage Properties
+# All files uploaded through the REST API will be stored in this directory
+# file.upload-dir=D:/MyWorks/Flutter/CateringBaseMyApp/backend/Files
