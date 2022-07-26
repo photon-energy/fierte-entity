@@ -1,7 +1,11 @@
 package com.fierte.web.entity.users;
 
 import com.fierte.web.entity.auth.Token;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
+@Data
+@RequiredArgsConstructor
 public class UsersList {
 
     private Long user_id;

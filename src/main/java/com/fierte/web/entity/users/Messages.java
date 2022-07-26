@@ -1,7 +1,11 @@
 package com.fierte.web.entity.users;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
+@Data
+@RequiredArgsConstructor
 public class Messages {
 
     private String recipient;
@@ -9,35 +13,5 @@ public class Messages {
     private String message_id;
     private SMS sms;
 
-    public Messages(){}
 
-    public Messages(String recipient, String message_id, SMS sms){
-        this.recipient = recipient;
-        this.message_id = message_id;
-        this.sms = sms;
-    }
-
-    public String getRecipient() {
-        return recipient;
-    }
-
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
-
-    public String getMessage_id() {
-        return message_id;
-    }
-
-    public void setMessage_id(String message_id) {
-        this.message_id = message_id;
-    }
-
-    public SMS getSms() {
-        return sms;
-    }
-
-    public void setSms(SMS sms) {
-        this.sms = sms;
-    }
 }

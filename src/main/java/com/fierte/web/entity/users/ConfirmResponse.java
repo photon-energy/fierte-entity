@@ -1,22 +1,14 @@
 package com.fierte.web.entity.users;
 
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@RequiredArgsConstructor
 public class ConfirmResponse {
 
     private boolean success;
 
-
-    public ConfirmResponse(){}
-
-    public ConfirmResponse(boolean success){
-        this.success = success;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
 
 }

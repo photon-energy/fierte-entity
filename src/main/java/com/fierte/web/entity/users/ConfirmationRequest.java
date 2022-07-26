@@ -1,22 +1,13 @@
 package com.fierte.web.entity.users;
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@RequiredArgsConstructor
 public class ConfirmationRequest {
 
     private Messages[] messages;
-
-    public ConfirmationRequest(){}
-
-    public ConfirmationRequest(Messages[] messages){
-        this.messages = messages;
-    }
-
-    public Messages[] getMessages() {
-        return messages;
-    }
-
-    public void setMessages(Messages[] messages) {
-        this.messages = messages;
-    }
 }
 
 

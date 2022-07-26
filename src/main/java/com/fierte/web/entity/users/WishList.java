@@ -2,9 +2,12 @@ package com.fierte.web.entity.users;
 
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 import javax.persistence.Entity;
 
 @Data
+@RequiredArgsConstructor
 @Entity
 public class WishList {
 

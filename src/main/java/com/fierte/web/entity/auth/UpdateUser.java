@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 
 @Data
 @RequiredArgsConstructor
-@Entity
 public class UpdateUser {
 
     private UserCredentials[] credentials;
