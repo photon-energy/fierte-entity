@@ -7,7 +7,7 @@
 		<version>2.5.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.fierte.web.entity</groupId>
+	<groupId>com.fierte.web</groupId>
 	<artifactId>fierte-entity</artifactId>
 	<version>latest</version>
 	<packaging>jar</packaging>
@@ -21,6 +21,14 @@
 		<springdoc.version>1.5.10</springdoc.version>
 		<kotlin.version>1.6.10</kotlin.version>
 	</properties>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<distributionManagement>
 		<repository>
@@ -169,7 +177,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	
 
 </project>
