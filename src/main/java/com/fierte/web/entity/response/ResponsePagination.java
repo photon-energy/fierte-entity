@@ -1,19 +1,18 @@
-package com.fierte.web.entity.orders;
+package com.fierte.web.entity.response;
+
+
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-
 @Data
 @RequiredArgsConstructor
-public class ResponseCarts {
+public class ResponsePagination<T> {
 
     private boolean success;
     private String message;
     private Integer total;
-    private List<CartList> data;
-    private Integer total_price;
-
+    private List<T> data;
 }

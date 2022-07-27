@@ -4,11 +4,13 @@ import com.fierte.web.entity.auth.Token;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.UUID;
+
 @Data
 @RequiredArgsConstructor
 public class UsersList {
 
-    private Long user_id;
+    private UUID user_id;
     private String first_name;
     private String last_name;
     private String username;

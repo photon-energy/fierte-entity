@@ -1,6 +1,13 @@
 package com.fierte.web.entity.orders;
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
+import javax.persistence.Entity;
+
+@Data
+@RequiredArgsConstructor
+@Entity
 public class Carts {
 
     private Long cart_id;

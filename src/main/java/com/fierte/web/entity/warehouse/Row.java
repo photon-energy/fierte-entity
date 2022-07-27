@@ -1,40 +1,29 @@
 package com.fierte.web.entity.warehouse;
 
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+import javax.persistence.*;
+import java.util.UUID;
+
+@Data
+@RequiredArgsConstructor
+@Entity
 public class Row {
 
-    private Integer row_number;
-    private Integer status;
-    private Integer bin_count;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "row_id")
+    private UUID rowId;
 
-    public Row(){}
+    @Column(name = "row_number")
+    private Integer rowNumber;
 
-    public Row(Integer row_number, Integer status, Integer bin_count){
-        this.row_number = row_number;
-        this.status = status;
-        this.bin_count = bin_count;
-    }
+    private boolean status;
 
-    public Integer getRow_number() {
-        return row_number;
-    }
+    @Column(name = "bin_count")
+    private Integer binCount;
 
-    public void setRow_number(Integer row_number) {
-        this.row_number = row_number;
-    }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Integer getBin_count() {
-        return bin_count;
-    }
-
-    public void setBin_count(Integer bin_count) {
-        this.bin_count = bin_count;
-    }
 }

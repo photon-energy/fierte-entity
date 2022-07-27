@@ -3,14 +3,19 @@ package com.fierte.web.entity.users;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.UUID;
 
 @Data
 @RequiredArgsConstructor
 @Entity
 public class Users {
 
-    private Long user_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
+    private UUID user_id;
+
     private String first_name;
     private String last_name;
     private String username;

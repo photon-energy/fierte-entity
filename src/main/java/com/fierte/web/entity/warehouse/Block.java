@@ -1,40 +1,28 @@
 package com.fierte.web.entity.warehouse;
 
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+import javax.persistence.*;
+import java.util.List;
+import java.util.UUID;
+
+@Data
+@RequiredArgsConstructor
+@Entity
 public class Block {
 
-    private String block_name;
-    private Integer status;
-    private Row[] row;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "block_id")
+    private UUID blockId;
 
-    public Block(){}
+    @Column(name = "block_name", nullable = false)
+    private String blockName;
+    private boolean status;
 
-    public Block(String block_name, Integer status, Row[] row){
-        this.block_name = block_name;
-        this.status = status;
-        this.row = row;
-    }
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<Row> row;
 
-    public String getBlock_name() {
-        return block_name;
-    }
-
-    public void setBlock_name(String block_name) {
-        this.block_name = block_name;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Row[] getRow() {
-        return row;
-    }
-
-    public void setRow(Row[] row) {
-        this.row = row;
-    }
 }

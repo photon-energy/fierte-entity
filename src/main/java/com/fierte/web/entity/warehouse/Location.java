@@ -1,30 +1,23 @@
 package com.fierte.web.entity.warehouse;
 
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+import javax.persistence.*;
+import java.util.UUID;
+
+@Data
+@RequiredArgsConstructor
+@Entity
 public class Location {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "location_id")
+    private UUID locationId;
 
     private float latitude;
     private float longitude;
 
-    public Location(){}
-
-    public Location(float latitude, float longitude){
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
-
-    public float getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(float latitude) {
-        this.latitude = latitude;
-    }
-
-    public float getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(float longitude) {
-        this.longitude = longitude;
-    }
 }
